@@ -1,0 +1,58 @@
+<html>
+<head>
+    <h2>Calculadora 
+        por C29
+    </h2>
+  <script>
+    // Define a function to get the display element
+    function getDisplay() {
+      return document.getElementById("display");
+    }
+
+    // Define a function to clear the display
+    function clearDisplay() {
+      getDisplay().value = "";
+    }
+
+    // Define a function to append a character to the display
+    function appendDisplay(char) {
+      getDisplay().value += char;
+    }
+
+    // Define a function to evaluate the expression in the display
+    function calculate() {
+      try {
+        getDisplay().value = eval(getDisplay().value);
+      } catch (error) {
+        alert("Invalid expression");
+      }
+    }
+  </script>
+</head>
+<body>
+  <input id="display" type="text" value="" disabled>
+  <br>
+  <br>
+  <button onclick="clearDisplay()">C</button>
+  <button onclick="appendDisplay('/')">/</button>
+  <button onclick="appendDisplay('*')">x</button>
+  <button onclick="appendDisplay('-')">-</button>
+  <button onclick="appendDisplay('+')">+</button>
+  <br>
+  <button onclick="appendDisplay('7')">7</button>
+  <button onclick="appendDisplay('8')">8</button>
+  <button onclick="appendDisplay('9')">9</button>
+  <br>
+  <button onclick="appendDisplay('4')">4</button>
+  <button onclick="appendDisplay('5')">5</button>
+  <button onclick="appendDisplay('6')">6</button>
+  <br>
+  <button onclick="appendDisplay('1')">1</button>
+  <button onclick="appendDisplay('2')">2</button>
+  <button onclick="appendDisplay('3')">3</button>
+  <br>
+  <button onclick="appendDisplay('0')">0</button>
+  <button onclick="appendDisplay('.')">.</button>
+  <button onclick="calculate()">=</button>
+</body>
+</html>
