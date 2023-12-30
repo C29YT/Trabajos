@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html 
+<head>
+    <style>
+        body {
+          font-family: sans-serif;
+        }
+      </style>
+    <h1>Blog y Calculadora</h1>
+    <h3>by C29</h3>
+    <h4>El objetivo de este blog es mostrar diversas cosas que aprendí,
+        ya que no pude usar Angular, al menos mostrar algún otro
+        conocimiento que fuí adquiriendo en este tiempo.
+        <br>
+        A su vez, <span style="color: royalblue;"> voy a hacer una calculadora un poco más compleja</span>,
+        ya que la anterior era muy básica.
+    </h4>
+</head>
+    <h4>Primero que nada, aquí hay una captura de lo que está siendo el código <span style="color: royalblue;">
+    actualmente.</span>
+    <br>
+    <br>
+    <img src="image.jpg.png">
+    <h4>Para la calculadora, decidí hacerle mejoras ya que la anterior era muy básica, no tenía diseño
+    y no tenía operaciones un poco más complejas.</h4>
+    <h4>Así se veía antes:
+        <br>
+        <br>
+    <img src="captura.png" alt="Esta es una imágen de la antigua versión de la calculadora.">
+    </h4>
+    <h4>Así se ve ahora:</h4>
+        <h1>Calculadora v0.2</h1>
+        <h3>by C29</h3>
+        <html>
+<head>
+    <style>
+        .calculator {
+            width: 300px;
+            height: 520px;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        #display {
+            width: 280px;
+            height: 50px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 30px;
+            text-align: right;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+  <script>
+    // Define a function to get the display element
+    function getDisplay() {
+      return document.getElementById("display");
+    }
+
+    // Define a function to clear the display
+    function clearDisplay() {
+      getDisplay().value = "";
+    }
+
+    // Define a function to append a character to the display
+    function appendDisplay(char) {
+      getDisplay().value += char;
+    }
+
+    // Define a function to evaluate the expression in the display
+    function calculate() {
+      try {
+        // Replace the symbol ^ with Math.pow()
+        let expr = getDisplay().value.replace(/(\d+)\^(\d+)/g, "Math.pow($1, $2)");
+        // Evaluate the expression using eval()
+        getDisplay().value = eval(expr);
+      } catch (error) {
+        alert("Invalid expression");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="calculator">
+    <input id="display" type="text" value="" disabled>
+    <br>
+    <br>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="appendDisplay('/')">/</button>
+    <button onclick="appendDisplay('*')">x</button>
+    <button onclick="appendDisplay('-')">-</button>
+    <button onclick="appendDisplay('+')">+</button>
+    <br>
+    <button onclick="appendDisplay('7')">7</button>
+    <button onclick="appendDisplay('8')">8</button>
+    <button onclick="appendDisplay('9')">9</button>
+    <br>
+    <button onclick="appendDisplay('4')">4</button>
+    <button onclick="appendDisplay('5')">5</button>
+    <button onclick="appendDisplay('6')">6</button>
+    <button onclick="appendDisplay('%')">%</button> 
+    <br>
+    <button onclick="appendDisplay('1')">1</button>
+    <button onclick="appendDisplay('2')">2</button>
+    <button onclick="appendDisplay('3')">3</button>
+    <button onclick="appendDisplay('^')">^</button> 
+    <br>
+    <button onclick="appendDisplay('0')">0</button>
+    <button onclick="appendDisplay('.')">.</button>
+    <button onclick="calculate()">=</button>
+  </div> 
+</body>
+<h4>Cómo se puede apreciar, añadí los porcentajes y las potencias, además de un diseño más
+    agradable a la vista, agregando un poco de complejidad a mi calculadora.
+    <br>
+    <br>
+    Eso sería todo por mi parte! Mi GitHub y otras redes estarán más abajo.
+</h4>
+<a target= "_blank" href= "https://www.youtube.com/channel/UCIVctfu0Rq9zcHltUemGVOw">Mi canal de YouTube</a>
+<br>
+<a target= "_blank" href= "https://github.com/C29YT">Mi GitHub</a>
+<br>
+<h5>Blog creado por C29 - 2023</h5>
+</html>
